@@ -11,7 +11,7 @@ i = 0
 
 layout = [  [sg.Text('Drive Mode', size=(29,1), font='Helvetica 20', justification='center', key='titleTXT'), sg.Button('', image_data=red_x_base64, button_color=sg.TRANSPARENT_BUTTON, border_width=0, image_subsample=8, key='Exit')], 
             [sg.Button('', image_data=drive_mode_base64, button_color=sg.TRANSPARENT_BUTTON, border_width=5, image_subsample=1, size=(4, 4), key='drive'), sg.Button('', image_data=direct_charge_base64, button_color=sg.TRANSPARENT_BUTTON, border_width=5, image_subsample=1, size=(4, 4), key='dc'), sg.ProgressBar(1, orientation='w', size=(48, 20), key='mphPROG'), sg.Text(i, size=(25,1), font='Helvetica 30', justification='center', key='mphTXT')],
-            [sg.Button('', image_data=boost_drive_base64, button_color=sg.TRANSPARENT_BUTTON, border_width=5, image_subsample=1, size=(4, 4), key='boost'), sg.Button('', image_data=regen_braking_base64, button_color=sg.TRANSPARENT_BUTTON, border_width=5, image_subsample=1, size=(4, 4), key='regen')]  ]
+            [sg.Button('', image_data=boost_drive_base64, button_color=sg.TRANSPARENT_BUTTON, border_width=5, image_subsample=1, size=(4, 4), key='boost'), sg.Button('', image_data=regen_braking_base64, button_color=sg.TRANSPARENT_BUTTON, border_width=5, image_subsample=1, size=(4, 4), key='regen'), sg.ProgressBar(1, orientation='w', size=(48, 20), key='pressurePROG'), sg.Text(i, size=(25,1), font='Helvetica 30', justification='center', key='pressureTXT')]  ]
             # [sg.Text(i, size=(25,1), font='Helvetica 30', justification='center', key='mphTXT')],
             # [sg.ProgressBar(1, orientation='h', size=(48, 20), key='mphPROG')],
             #[sg.Button('', image_data=red_x_base64, button_color=sg.TRANSPARENT_BUTTON, border_width=0, image_subsample=8, key='Exit')] ]
@@ -36,9 +36,11 @@ while True:             # Event Loop
     if event in (None, 'Exit'):
     	break
     
-    progress_bar = window['mphPROG']
-    progress_bar.update_bar(i+1, 100)
+    window['mphPROG'].update_bar(i+1, 100)
     window['mphTXT'].Update(str(i) + " MPH")
+
+    window['pressurePROG'].update_bar(i+1, 100)
+    window['pressureTXT'].Update(str(i) + " PSI")
     
     if i < 100:
         i = i + 1
