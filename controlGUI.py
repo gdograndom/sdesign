@@ -16,7 +16,7 @@ layout = [  [sg.Text('Drive Mode', size=(26,1), font='Helvetica 40', justificati
             # [sg.ProgressBar(1, orientation='h', size=(48, 20), key='mphPROG')],
             [sg.Button('', image_data=red_x_base64, button_color=sg.TRANSPARENT_BUTTON, border_width=0, image_subsample=8, key='Exit')] ]
 
-window = sg.Window('Window Title', layout, no_titlebar=True, grab_anywhere=True, size=(1280, 720))
+window = sg.Window('Window Title', layout, no_titlebar=True, grab_anywhere=True, size=(800, 480))
 
 while True:             # Event Loop
     event, values = window.read(timeout=0)
