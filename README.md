@@ -3,3 +3,4 @@
 Micro Processor:
 Raspberry Pi 4B - Head Node
 
+currently on pi3b
