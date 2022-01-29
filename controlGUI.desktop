@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Exec=/home/yourname/bin/ssh_home.sh
+Name=SSH Server
+GenericName=SSH Server
+Comment=Connect to My Server
+Encoding=UTF-8
+Terminal=true
+Type=Application
+Categories=Application;Network;
