@@ -1,9 +1,9 @@
 [Desktop Entry]
 Version=1.0
-Exec=/home/yourname/bin/ssh_home.sh
-Name=SSH Server
-GenericName=SSH Server
-Comment=Connect to My Server
+Exec=/bin/openControlGUI.sh
+Name=Bike Control GUI
+GenericName=Control GUI
+Comment=Open Control GUI for Hydraulic Bike
 Encoding=UTF-8
 Terminal=true
 Type=Application
