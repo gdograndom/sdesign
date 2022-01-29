@@ -1,6 +1,6 @@
-#! /usr/bin/sh
+#!/bin/bash
 
-cd 
+cd
 cd sdesign
 git pull
 python3 controlGUI.py
