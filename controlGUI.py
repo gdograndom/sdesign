@@ -33,7 +33,7 @@ layout = [  [sg.Text('Drive Mode', size=(29,1), font='Helvetica 20', justificati
 
 window = sg.Window('Window Title', layout, no_titlebar=True, grab_anywhere=False, size=(800, 480))
 
-window['titleTXT'].Update("Drive Mode")
+#initialize activating pins to direct drive configuration
 GPIO.output(sol23, GPIO.LOW)
 GPIO.output(sol11, GPIO.LOW)
 GPIO.output(sol16, GPIO.HIGH)
