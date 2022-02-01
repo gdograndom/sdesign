@@ -33,6 +33,12 @@ layout = [  [sg.Text('Drive Mode', size=(29,1), font='Helvetica 20', justificati
 
 window = sg.Window('Window Title', layout, no_titlebar=True, grab_anywhere=False, size=(800, 480))
 
+window['titleTXT'].Update("Drive Mode")
+GPIO.output(sol23, GPIO.LOW)
+GPIO.output(sol11, GPIO.LOW)
+GPIO.output(sol16, GPIO.HIGH)
+GPIO.output(sol20, GPIO.LOW)
+
 while True:             # Event Loop
     event, values = window.read(timeout=0)
     #print(event, values)
@@ -44,16 +50,28 @@ while True:             # Event Loop
         GPIO.output(sol16, GPIO.HIGH)
         GPIO.output(sol20, GPIO.LOW)
     if event in (None, 'regen'):
-    	print("Switched to regenerative braking")
-    	window['titleTXT'].Update("Regenerative Braking")
+        print("Switched to regenerative braking")
+        window['titleTXT'].Update("Regenerative Braking")
+        GPIO.output(sol23, GPIO.LOW)
+        GPIO.output(sol11, GPIO.LOW)
+        GPIO.output(sol16, GPIO.LOW)
+        GPIO.output(sol20, GPIO.LOW)
     if event in (None, 'dc'):
-    	print("Switched to direct charge")
-    	window['titleTXT'].Update("Direct Charge")
+        print("Switched to direct charge")
+        window['titleTXT'].Update("Direct Charge")
+        GPIO.output(sol23, GPIO.HIGH)
+        GPIO.output(sol11, GPIO.LOW)
+        GPIO.output(sol16, GPIO.LOW)
+        GPIO.output(sol20, GPIO.HIGH)
     if event in (None, 'boost'):
-    	print("Switched to BOOST MODE")
-    	window['titleTXT'].Update("BOOST MODE")
+        print("Switched to BOOST MODE")
+        window['titleTXT'].Update("BOOST MODE")
+        GPIO.output(sol23, GPIO.LOW)
+        GPIO.output(sol11, GPIO.HIGH)
+        GPIO.output(sol16, GPIO.HIGH)
+        GPIO.output(sol20, GPIO.LOW)
     if event in (None, 'Exit'):
-    	break
+        break
     
     window['mphPROG'].update_bar(i+1, 100)
     window['mphTXT'].Update(str(i) + " MPH")
