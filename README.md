@@ -5,6 +5,12 @@ Raspberry Pi 4B - Head Node
 
 currently on raspberry pi 3b
 
+sol9=pin 31
+sol11=pin 33
+sol16=pin 35
+
+![alt text](https://www.raspberrypi.com/documentation/computers/images/GPIO-Pinout-Diagram-2.png)
+
 |               | Solenoid 9  | Solenoid 11  | Solenoid 16  |
 |     :---:     |     :-:     |     :-:      |     :-:      |
 | Direct Drive  |     LOW     |     LOW      |     HIGH     |
