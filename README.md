@@ -19,3 +19,12 @@ Solenoid 11 = pin 33
 Solenoid 16 = pin 35
 
 ![alt text](https://www.raspberrypi.com/documentation/computers/images/GPIO-Pinout-Diagram-2.png)
+
+Pi powered by 12V battery through voltage divider to pins 2(+) and 39(-)
+
+Pins 3, 4, 5, 6 used for touchscreen power and touch input
+
+Pin 1 supplies 3.3V VCC to 3.3V relays
+
+Full Electrical Schematic for Control: (Some pins inaccurate, refer to the above)
+![Alt text](fullElectrical.png?raw=true "Full Electical Schematic for Control")
