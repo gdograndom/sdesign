@@ -22,7 +22,7 @@ Solenoid 9 = pin 31
 
 Solenoid 11 = pin 33
 
-Solenoid 16 = pin 35
+Solenoid 16 = pin 37
 
 ### Other Pins:
 
