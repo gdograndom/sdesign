@@ -16,7 +16,7 @@ Raspberry Pi 3B - Head Node
 
 ![alt text](https://www.raspberrypi.com/documentation/computers/images/GPIO-Pinout-Diagram-2.png)
 
-### Solenoids:
+### Solenoid Activating Signals:
 
 Solenoid 9 = pin 31
 
