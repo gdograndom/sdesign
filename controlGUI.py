@@ -11,7 +11,7 @@ regen_braking_base64 = b'iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAYAAACtWK6eAAAABHNCSVQ
 #Solenoid activating GPIO pins
 sol9=31
 sol11=33
-sol16=35
+sol16=37
 
 #GPIO setup
 GPIO.setmode(GPIO.BOARD)
@@ -49,7 +49,7 @@ while True:             # Event Loop
     if event in (None, 'regen'):
         print("Switched to regenerative braking")
         window['titleTXT'].Update("Regenerative Braking")
-        GPIO.output(sol9, GPIO.LOW)
+        GPIO.output(sol9, GPIO.HIGH)
         GPIO.output(sol11, GPIO.LOW)
         GPIO.output(sol16, GPIO.LOW)
 
@@ -63,7 +63,7 @@ while True:             # Event Loop
     if event in (None, 'boost'):
         print("Switched to BOOST MODE")
         window['titleTXT'].Update("BOOST MODE")
-        GPIO.output(sol9, GPIO.LOW)
+        GPIO.output(sol9, GPIO.HIGH)
         GPIO.output(sol11, GPIO.HIGH)
         GPIO.output(sol16, GPIO.HIGH)
 
