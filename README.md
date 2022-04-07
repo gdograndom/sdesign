@@ -26,7 +26,7 @@ Solenoid 16 = pin 35
 
 ### Other Pins:
 
-Pi powered by 12V battery through voltage divider to pins 2(+) and 39(-)
+Pi powered by 12V battery through voltage divider to 5.4V to pins 2(+) and 39(-)
 
 Pins 3, 4, 5, 6 used for touchscreen power and touch input
 
