@@ -1,15 +1,7 @@
 # DU 2021-2022 National Fluid Power Vehicle Challenge Repository
 
 Micro Processor:
-Raspberry Pi 4B - Head Node
-
-currently on raspberry pi 3b
-
-sol9=pin 31
-sol11=pin 33
-sol16=pin 35
-
-![alt text](https://www.raspberrypi.com/documentation/computers/images/GPIO-Pinout-Diagram-2.png)
+Raspberry Pi 3B - Head Node
 
 |               | Solenoid 9  | Solenoid 11  | Solenoid 16  |
 |     :---:     |     :-:     |     :-:      |     :-:      |
@@ -17,3 +9,9 @@ sol16=pin 35
 | Direct Charge |     HIGH    |     LOW      |     LOW      |
 | Boost Drive   |     HIGH    |     HIGH     |     HIGH     |
 | Regen Braking |     HIGH    |     LOW      |     LOW      |
+
+sol9=pin 31
+sol11=pin 33
+sol16=pin 35
+
+![alt text](https://www.raspberrypi.com/documentation/computers/images/GPIO-Pinout-Diagram-2.png)
