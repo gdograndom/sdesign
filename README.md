@@ -10,6 +10,8 @@ Raspberry Pi 3B - Head Node
 | Boost Drive   |     HIGH    |     HIGH     |     HIGH     |
 | Regen Braking |     HIGH    |     LOW      |     LOW      |
 
+
+
 Solenoid 9 = pin 31
 
 Solenoid 11 = pin 33
