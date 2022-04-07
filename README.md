@@ -10,8 +10,10 @@ Raspberry Pi 3B - Head Node
 | Boost Drive   |     HIGH    |     HIGH     |     HIGH     |
 | Regen Braking |     HIGH    |     LOW      |     LOW      |
 
-sol9=pin 31
-sol11=pin 33
-sol16=pin 35
+Solenoid 9 = pin 31
+
+Solenoid 11 = pin 33
+
+Solenoid 16 = pin 35
 
 ![alt text](https://www.raspberrypi.com/documentation/computers/images/GPIO-Pinout-Diagram-2.png)
