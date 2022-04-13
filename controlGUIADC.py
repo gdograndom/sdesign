@@ -77,7 +77,7 @@ while True:             # Event Loop
         break
 
     adc_value = adc.read_adc(0, gain=1)
-    analog_voltage = value*(4.096/32767)
+    analog_voltage = adc_value*(4.096/32767)
     
     window['mphPROG'].update_bar(i+1, 100)
     window['mphTXT'].Update(str(i) + " MPH")
