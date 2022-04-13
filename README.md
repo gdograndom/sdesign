@@ -35,3 +35,7 @@ Pin 1 supplies 3.3V VCC to 3.3V relays
 ## Full Electrical Schematic for Control: 
 (Some pins inaccurate, refer to the above)
 ![Alt text](fullElectrical.png?raw=true "Full Electical Schematic for Control")
+
+
+## Transducer Amplifier Gain Table
+![alt text](https://939506.smushcdn.com/2600043/wp-content/uploads/2022/03/Table-2.png?lossy=0&strip=1&webp=1)
