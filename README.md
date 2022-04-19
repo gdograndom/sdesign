@@ -41,4 +41,5 @@ Pin 1 supplies 3.3V VCC to 3.3V relays
 ![alt text](https://939506.smushcdn.com/2600043/wp-content/uploads/2022/03/Table-2.png?lossy=0&strip=1&webp=1)
 
 The converted voltage reading ranges from -2048 to +2047 for ADS1015.
+
 So with gain of 1, analog_voltage = adc_value*(4.096/2047)
