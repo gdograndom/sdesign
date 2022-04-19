@@ -82,8 +82,8 @@ while True:             # Event Loop
     window['mphPROG'].update_bar(i+1, 100)
     window['mphTXT'].Update(str(i) + " MPH")
 
-    window['pressurePROG'].update_bar(adc_value, 2000)
-    window['pressureTXT'].Update(str(adc_value) + " PSI")
+    window['pressurePROG'].update_bar(analog_voltage, 4)
+    window['pressureTXT'].Update(str(analog_voltage) + " V")
     
     if i < 63:
         i = i + 1
