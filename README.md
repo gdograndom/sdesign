@@ -43,3 +43,9 @@ Pin 1 supplies 3.3V VCC to 3.3V relays
 The converted voltage reading ranges from -2048 to +2047 for ADS1015.
 
 So with gain of 1, analog_voltage = adc_value*(4.096/2047)
+
+## Transducer/ADC Schematic
+![Alt text](transducerSchematic.png?raw=true "Full Electical Schematic for Control")
+
+
+
