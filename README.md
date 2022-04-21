@@ -46,6 +46,6 @@ So with gain of 1, analog_voltage = adc_value*(4.096/2047)
 
 ## Transducer/ADC Schematic
 ![Alt text](transducerSchematic.png?raw=true "Full Electical Schematic for Control")
-
+Transducer takes 12V Vcc
 
 
