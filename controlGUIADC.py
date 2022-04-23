@@ -83,6 +83,8 @@ while True:             # Event Loop
     adc_value = adc.read_adc(0, gain=1)
     analog_voltage = adc_value*(4.096/2047)
     psi_value = round((analog_voltage - 0.5) * 1000, 2)
+    if (analog_voltage < 0.5 or analog_voltage > 3.3):
+    	psi_value = "Transducer Error"
 
     window['pressurePROG'].update_bar(psi_value, 3300)
     window['pressureTXT'].Update(str(psi_value) + " PSI")
