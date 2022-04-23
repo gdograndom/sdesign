@@ -34,7 +34,7 @@ layout = [  [sg.Frame(layout=col_1, title=''), sg.Frame(layout=col_2, title='')]
 #storing mph prog bar in case of reimplimentation
 #sg.ProgressBar(1, orientation='w', size=(18, 40), key='mphPROG'), sg.Text(i, size=(25,1), font='Helvetica 30', key='mphTXT')]
 
-window = sg.Window('Window Title', layout, no_titlebar=True, grab_anywhere=False, size=(800, 480))
+window = sg.Window('Window Title', layout, no_titlebar=True, grab_anywhere=False, size=(800, 480), margins=(0, 0))
 
 #initialize activating pins to direct drive configuration
 GPIO.output(sol9, GPIO.LOW)
