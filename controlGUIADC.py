@@ -84,7 +84,7 @@ while True:             # Event Loop
     analog_voltage = adc_value*(4.096/2047)
     psi_value = (analog_voltage - 0.5) * 1000
 
-    window['pressurePROG'].update_bar(analog_voltage, 4)
+    window['pressurePROG'].update_bar(analog_voltage, 5)
     window['pressureTXT'].Update(str(analog_voltage) + " V")
 
 window.close()
