@@ -29,7 +29,7 @@ col_1 = [  [sg.Text('Drive Mode', size=(29,1), font='Helvetica 20', justificatio
 col_2 = [  [sg.Text('', size=(11,1), font='Helvetica 20'), sg.Button('', image_data=red_x_base64, button_color=sg.TRANSPARENT_BUTTON, border_width=0, image_subsample=8, key='Exit')],
            [sg.ProgressBar(1, orientation='w', size=(45, 40), key='pressurePROG'), sg.Text(i, size=(25,1), font='Helvetica 30', key='pressureTXT')] ]
 
-layout = [  [sg.Frame(layout=col_1, title=''), sg.Frame(layout=col_2, title='')] ]
+layout = [  [sg.Frame(layout=col_1, title='', margins=(0,0)), sg.Frame(layout=col_2, title='', margins=(0,0))] ]
 
 #storing mph prog bar in case of reimplimentation
 #sg.ProgressBar(1, orientation='w', size=(18, 40), key='mphPROG'), sg.Text(i, size=(25,1), font='Helvetica 30', key='mphTXT')]
