@@ -86,9 +86,9 @@ while True:             # Event Loop
 
     window['pressurePROG'].update_bar(psi_value, 3300)
     if (analog_voltage < 0.5 or analog_voltage > 3.3):
-    	window['pressureTXT'].Update(str(analog_voltage) + " ERROR?")
+    	window['pressureTXT'].Update(str(psi_value) + " ERROR?")
     else:
-    	window['pressureTXT'].Update(str(analog_voltage) + " PSI")
+    	window['pressureTXT'].Update(str(psi_value) + " PSI")
 
 window.close()
 GPIO.cleanup()
