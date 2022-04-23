@@ -27,7 +27,7 @@ col_1 = [  [sg.Text('Drive Mode', size=(29,1), font='Helvetica 20', justificatio
            [sg.Button('', image_data=boost_drive_base64, button_color=sg.TRANSPARENT_BUTTON, border_width=5, image_subsample=1, size=(4, 4), key='boost'), sg.Button('', image_data=regen_braking_base64, button_color=sg.TRANSPARENT_BUTTON, border_width=5, image_subsample=1, size=(4, 4), key='regen'), sg.Text('', size=(3,1), font='Helvetica 30')] ]
 
 col_2 = [  [sg.Text('', size=(13,1), font='Helvetica 20'), sg.Button('', image_data=red_x_base64, button_color=sg.TRANSPARENT_BUTTON, border_width=0, image_subsample=8, key='Exit')],
-           [sg.ProgressBar(1, orientation='w', size=(30, 40), key='pressurePROG')],
+           [sg.Text('', size=(5,1), font='Helvetica 20'), sg.ProgressBar(1, orientation='w', size=(30, 40), key='pressurePROG')],
            [sg.Text(i, size=(25,1), font='Helvetica 30', key='pressureTXT')] ]
 
 layout = [  [sg.Frame(layout=col_1, title='', border_width=0), sg.Frame(layout=col_2, title='', border_width=0)] ]
