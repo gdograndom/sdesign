@@ -25,17 +25,21 @@ GPIO.setup(sol16, GPIO.OUT)
 #Transducer ADC setup
 adc = Adafruit_ADS1x15.ADS1015()
 
-i = 0
-
 #GUI layout
-layout = [  [sg.Text('Drive Mode', size=(29,1), font='Helvetica 20', justification='center', key='titleTXT'), sg.Text('', size=(18,1), font='Helvetica 20'), sg.Button('', image_data=red_x_base64, button_color=sg.TRANSPARENT_BUTTON, border_width=0, image_subsample=8, key='Exit')], 
-            [sg.Button('', image_data=drive_mode_base64, button_color=sg.TRANSPARENT_BUTTON, border_width=5, image_subsample=1, size=(4, 4), key='drive'), sg.Button('', image_data=direct_charge_base64, button_color=sg.TRANSPARENT_BUTTON, border_width=5, image_subsample=1, size=(4, 4), key='dc'), sg.Text('', size=(3,1), font='Helvetica 30'), sg.ProgressBar(1, orientation='w', size=(18, 40), key='mphPROG'), sg.Text(i, size=(25,1), font='Helvetica 30', key='mphTXT')],
-            [sg.Button('', image_data=boost_drive_base64, button_color=sg.TRANSPARENT_BUTTON, border_width=5, image_subsample=1, size=(4, 4), key='boost'), sg.Button('', image_data=regen_braking_base64, button_color=sg.TRANSPARENT_BUTTON, border_width=5, image_subsample=1, size=(4, 4), key='regen'), sg.Text('', size=(3,1), font='Helvetica 30'), sg.ProgressBar(1, orientation='w', size=(18, 40), key='pressurePROG'), sg.Text(i, size=(25,1), font='Helvetica 30', key='pressureTXT')]  ]
-            # [sg.Text(i, size=(25,1), font='Helvetica 30', justification='center', key='mphTXT')],
-            # [sg.ProgressBar(1, orientation='h', size=(48, 20), key='mphPROG')],
-            #[sg.Button('', image_data=red_x_base64, button_color=sg.TRANSPARENT_BUTTON, border_width=0, image_subsample=8, key='Exit')] ]
+col_1 = [  [sg.Text('Drive Mode', size=(29,1), font='Helvetica 20', justification='center', key='titleTXT')],
+           [sg.Button('', image_data=drive_mode_base64, button_color=sg.TRANSPARENT_BUTTON, border_width=5, image_subsample=1, size=(4, 4), key='drive'), sg.Button('', image_data=direct_charge_base64, button_color=sg.TRANSPARENT_BUTTON, border_width=5, image_subsample=1, size=(4, 4), key='dc')],
+           [sg.Button('', image_data=boost_drive_base64, button_color=sg.TRANSPARENT_BUTTON, border_width=5, image_subsample=1, size=(4, 4), key='boost'), sg.Button('', image_data=regen_braking_base64, button_color=sg.TRANSPARENT_BUTTON, border_width=5, image_subsample=1, size=(4, 4), key='regen'), sg.Text('', size=(3,1), font='Helvetica 30')] ]
 
-window = sg.Window('Window Title', layout, no_titlebar=True, grab_anywhere=False, size=(800, 480))
+col_2 = [  [sg.Text('', size=(13,1), font='Helvetica 20'), sg.Button('', image_data=red_x_base64, button_color=sg.TRANSPARENT_BUTTON, border_width=0, image_subsample=8, key='Exit')],
+           [sg.Text('', size=(1,1), font='Helvetica 20'), sg.ProgressBar(1, orientation='w', size=(32, 60), key='pressurePROG')],
+           [sg.Text('', size=(15,1), font='Helvetica 30', key='pressureTXT')] ]
+
+layout = [  [sg.Frame(layout=col_1, title='', border_width=0), sg.Frame(layout=col_2, title='', border_width=0)] ]
+
+#storing mph prog bar in case of reimplimentation
+#sg.ProgressBar(1, orientation='w', size=(18, 40), key='mphPROG'), sg.Text(i, size=(25,1), font='Helvetica 30', key='mphTXT')]
+
+window = sg.Window('Window Title', layout, no_titlebar=True, grab_anywhere=False, size=(800, 480), margins=(0, 0))
 
 #initialize activating pins to direct drive configuration
 GPIO.output(sol9, GPIO.LOW)
@@ -78,17 +82,10 @@ while True:             # Event Loop
 
     adc_value = adc.read_adc(0, gain=1)
     analog_voltage = adc_value*(4.096/2047)
-
-    #(vol - 0.5) * 1000
-    
-    window['mphPROG'].update_bar(i+1, 100)
-    window['mphTXT'].Update(str(i) + " MPH")
+    psi_value = (analog_voltage - 0.5) * 1000
 
     window['pressurePROG'].update_bar(analog_voltage, 4)
     window['pressureTXT'].Update(str(analog_voltage) + " V")
-    
-    if i < 63:
-        i = i + 1
 
 window.close()
 GPIO.cleanup()
