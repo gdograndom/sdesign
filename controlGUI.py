@@ -85,7 +85,7 @@ while True:             # Event Loop
     analog_voltage = adc_value*(4.096/2047)
     psi_value = round((analog_voltage - 0.5) * 1000, 2)
 
-    window['pressurePROG'].update_bar(psi_value, 3300)
+    window['pressurePROG'].update_bar(analog_voltage, 3300)
     if (analog_voltage < 0.5 or analog_voltage > 3.3):
     	window['pressureTXT'].Update(str(analog_voltage) + " ERROR?")
     else:
