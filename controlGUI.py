@@ -81,7 +81,7 @@ while True:             # Event Loop
     if event in (None, 'Exit'):
         break
 
-    adc_value = adc.read_adc(1, gain=1)
+    adc_value = adc.read_adc(0, gain=1)
     analog_voltage = adc_value*(4.096/2047)
     psi_value = round((analog_voltage - 0.5) * 1000, 2)
 
