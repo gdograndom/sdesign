@@ -81,8 +81,8 @@ while True:             # Event Loop
     if event in (None, 'Exit'):
         break
 
-    adc_value = adc.read_adc(1, gain=2)
-    analog_voltage = adc_value*(2.048/2047)
+    adc_value = adc.read_adc(1, gain=2/3)
+    analog_voltage = adc_value*(6.144/2047)
     psi_value = round((analog_voltage - 0.5) * 1000, 2)
 
     window['pressurePROG'].update_bar(analog_voltage, 4)
