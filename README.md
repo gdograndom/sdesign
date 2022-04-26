@@ -1,6 +1,5 @@
 # DU 2021-2022 National Fluid Power Vehicle Challenge Repository
 
-Micro Processor:
 Raspberry Pi 3B - Head Node
 
 ## Solenoid Truth Table:
@@ -26,13 +25,13 @@ Solenoid 16 = pin 37
 
 ### Other Pins:
 
-Pi powered by 12V battery through voltage divider to 5.4V to pins 2(+) and 39(-)
+Pi powered by 12V battery through voltage divider to 5.5V to pins 2(+) and 39(-)
 
 Pins 4,6 used for touchscreen power
 
 Pins 3,5 SDA and SCL for I2C bus from ADS1015
 
-Pin 1 supplies 3.3V VCC to 3.3V relays
+Pin 1 supplies 3.3V VCC to 3.3V relays and ADS1015
 
 ## Full Electrical Schematic for Control: 
 (Some pins inaccurate, refer to the above)
@@ -48,6 +47,5 @@ So with gain of 1, analog_voltage = adc_value*(4.096/2047)
 
 ## Transducer/ADC Schematic
 ![Alt text](transducerSchematic.png?raw=true "Full Electical Schematic for Control")
-Transducer takes 12V Vcc
 
 
