@@ -2,6 +2,10 @@
 
 Raspberry Pi 3B - Head Node
 
+## Pinout:
+
+![alt text](https://www.raspberrypi.com/documentation/computers/images/GPIO-Pinout-Diagram-2.png)
+
 ## Solenoid Truth Table:
 
 |               | Solenoid 9  | Solenoid 11  | Solenoid 16  |
@@ -10,10 +14,6 @@ Raspberry Pi 3B - Head Node
 | Direct Charge |     HIGH    |     LOW      |     LOW      |
 | Boost Drive   |     HIGH    |     HIGH     |     HIGH     |
 | Regen Braking |     HIGH    |     LOW      |     LOW      |
-
-## Pinout:
-
-![alt text](https://www.raspberrypi.com/documentation/computers/images/GPIO-Pinout-Diagram-2.png)
 
 ### Solenoid Activating Signals:
 
