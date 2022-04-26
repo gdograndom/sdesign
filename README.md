@@ -28,7 +28,9 @@ Solenoid 16 = pin 37
 
 Pi powered by 12V battery through voltage divider to 5.4V to pins 2(+) and 39(-)
 
-Pins 3, 4, 5, 6 used for touchscreen power and touch input
+Pins 4,6 used for touchscreen power
+
+Pins 3,5 SDA and SCL for I2C bus from ADS1015
 
 Pin 1 supplies 3.3V VCC to 3.3V relays
 
