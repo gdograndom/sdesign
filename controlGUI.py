@@ -112,9 +112,9 @@ while True:             # Event Loop
     	voltage_arr.pop(0)
     	psi_arr.pop(0)
     if (i >= 6):
-    	i--;
+    	i--
 
-    i++;
+    i++
 
 window.close()
 GPIO.cleanup()
