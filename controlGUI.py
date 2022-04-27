@@ -31,7 +31,7 @@ col_1 = [  [sg.Text('Drive Mode', size=(29,1), font='Helvetica 20', justificatio
            [sg.Button('', image_data=boost_drive_base64, button_color=sg.TRANSPARENT_BUTTON, border_width=5, image_subsample=1, size=(4, 4), key='boost'), sg.Button('', image_data=regen_braking_base64, button_color=sg.TRANSPARENT_BUTTON, border_width=5, image_subsample=1, size=(4, 4), key='regen'), sg.Text('', size=(3,1), font='Helvetica 30')] ]
 
 col_2 = [  [sg.Text('', size=(13,1), font='Helvetica 20'), sg.Button('', image_data=red_x_base64, button_color=sg.TRANSPARENT_BUTTON, border_width=0, image_subsample=8, key='Exit')],
-		   [sg.Text('       3300 PSI', size=(13,1), font='Helvetica 13')],
+		   [sg.Text('       3000 PSI', size=(13,1), font='Helvetica 13')],
            [sg.Text('', size=(2,1), font='Helvetica 20'), sg.ProgressBar(1, orientation='w', size=(32, 60), key='pressurePROG')],
            [sg.Text('', size=(30,1), font='Helvetica 20', key='pressureTXT')] ]
 
@@ -85,7 +85,7 @@ while True:             # Event Loop
     analog_voltage = adc_value*(4.096/2047)
     psi_value = round((analog_voltage - 0.5) * 1000, 0)
 
-    window['pressurePROG'].update_bar(psi_value, 3300)
+    window['pressurePROG'].update_bar(psi_value, 3000)
     if (analog_voltage < 0.5 or analog_voltage > 3.3):
     	window['pressureTXT'].Update(str(psi_value) + " ERROR?")
     else:
