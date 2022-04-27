@@ -100,21 +100,21 @@ while True:             # Event Loop
     psi_average = round(np.sum(psi_arr) / rollingAVG_size, 0)
 
     window['pressurePROG'].update_bar(psi_average, 3000)
-    if (analog_average < 0.5 or analog_average > 3.3):
+    if (voltage_average < 0.5 or voltage_average > 3.3):
     	window['pressureTXT'].Update(str(psi_average) + " ERROR?")
     else:
     	window['pressureTXT'].Update("   " + str(psi_average) + " PSI")
 
-    analog_voltage = round(analog_average, 3)
-    window['voltageTXT'].Update("   " + str(analog_average) + " V")
+    analog_voltage = round(voltage_average, 3)
+    window['voltageTXT'].Update("   " + str(voltage_average) + " V")
 
     if (i >= 5):
     	voltage_arr.pop(0)
     	psi_arr.pop(0)
     if (i >= 6):
-    	i--
+    	i = i - 1
 
-    i++
+    i = i + 1
 
 window.close()
 GPIO.cleanup()
