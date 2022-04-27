@@ -105,7 +105,7 @@ while True:             # Event Loop
     else:
     	window['pressureTXT'].Update("   " + str(psi_average) + " PSI")
 
-    window['voltageTXT'].Update("   " + str(voltage_average) + " V")
+    window['voltageTXT'].Update("     " + str(voltage_average) + " V")
 
     if (i >= 100):
     	voltage_arr.pop(0)
