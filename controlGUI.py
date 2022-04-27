@@ -27,10 +27,10 @@ GPIO.setup(sol16, GPIO.OUT)
 adc = Adafruit_ADS1x15.ADS1015()
 
 #Rolling average setup
-rollingAVG_size = 100;
-voltage_arr = [];
-psi_arr = [];
-i = 0;
+rollingAVG_size = 100
+voltage_arr = []
+psi_arr = []
+i = 0
 
 #GUI layout
 col_1 = [  [sg.Text('Drive Mode', size=(29,1), font='Helvetica 20', justification='center', key='titleTXT')],
