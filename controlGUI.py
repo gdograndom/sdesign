@@ -92,5 +92,7 @@ while True:             # Event Loop
     else:
     	window['pressureTXT'].Update("   " + str(psi_value) + " PSI")
 
+    window['voltageTXT'].Update("   " + str(analog_voltage) + " V")
+
 window.close()
 GPIO.cleanup()
