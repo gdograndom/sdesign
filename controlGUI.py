@@ -111,6 +111,8 @@ while True:             # Event Loop
     if (i >= 5):
     	voltage_arr.pop(0)
     	psi_arr.pop(0)
+    if (i >= 6):
+    	i--;
 
     i++;
 
