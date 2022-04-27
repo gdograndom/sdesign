@@ -92,6 +92,7 @@ while True:             # Event Loop
     else:
     	window['pressureTXT'].Update("   " + str(psi_value) + " PSI")
 
+    analog_voltage = round(analog_voltage, 3)
     window['voltageTXT'].Update("   " + str(analog_voltage) + " V")
 
 window.close()
