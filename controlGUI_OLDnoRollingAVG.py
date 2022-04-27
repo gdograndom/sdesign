@@ -1,6 +1,5 @@
 import PySimpleGUI as sg
 import RPi.GPIO as GPIO
-import numpy as np
 
 #transducer adc imports
 import Adafruit_ADS1x15
@@ -25,12 +24,6 @@ GPIO.setup(sol16, GPIO.OUT)
 
 #Transducer ADC setup
 adc = Adafruit_ADS1x15.ADS1015()
-
-#Rolling average setup
-rollingAVG_size = 5;
-voltage_arr = [];
-psi_arr = [];
-i = 0;
 
 #GUI layout
 col_1 = [  [sg.Text('Drive Mode', size=(29,1), font='Helvetica 20', justification='center', key='titleTXT')],
@@ -93,26 +86,15 @@ while True:             # Event Loop
     analog_voltage = adc_value*(4.096/2047)
     psi_value = round((analog_voltage - 0.5) * 1000, 0)
 
-    voltage_arr.append(analog_voltage)
-    psi_arr.append(psi_value)
-
-    voltage_average = round(np.sum(voltage_arr) / rollingAVG_size, 2)
-    psi_average = round(np.sum(psi_arr) / rollingAVG_size, 0)
-
-    window['pressurePROG'].update_bar(psi_average, 3000)
-    if (analog_average < 0.5 or analog_average > 3.3):
-    	window['pressureTXT'].Update(str(psi_average) + " ERROR?")
+    window['pressurePROG'].update_bar(psi_value, 3000)
+    if (analog_voltage < 0.5 or analog_voltage > 3.3):
+    	window['pressureTXT'].Update(str(psi_value) + " ERROR?")
     else:
-    	window['pressureTXT'].Update("   " + str(psi_average) + " PSI")
+    	window['pressureTXT'].Update("   " + str(psi_value) + " PSI")
 
-    analog_voltage = round(analog_average, 3)
-    window['voltageTXT'].Update("   " + str(analog_average) + " V")
+    analog_voltage = round(analog_voltage, 3)
+    window['voltageTXT'].Update("   " + str(analog_voltage) + " V")
 
-    if (i >= 5):
-    	voltage_arr.pop(0)
-    	psi_arr.pop(0)
-
-    i++;
 
 window.close()
 GPIO.cleanup()
