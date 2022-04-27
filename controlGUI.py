@@ -27,7 +27,7 @@ GPIO.setup(sol16, GPIO.OUT)
 adc = Adafruit_ADS1x15.ADS1015()
 
 #Rolling average setup
-rollingAVG_size = 15;
+rollingAVG_size = 100;
 voltage_arr = [];
 psi_arr = [];
 i = 0;
@@ -107,10 +107,10 @@ while True:             # Event Loop
 
     window['voltageTXT'].Update("   " + str(voltage_average) + " V")
 
-    if (i >= 15):
+    if (i >= 100):
     	voltage_arr.pop(0)
     	psi_arr.pop(0)
-    if (i >= 16):
+    if (i >= 101):
     	i = i - 1
 
     i = i + 1
