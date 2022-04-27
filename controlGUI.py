@@ -83,7 +83,7 @@ while True:             # Event Loop
 
     adc_value = adc.read_adc(1, gain=1)
     analog_voltage = adc_value*(4.096/2047)
-    psi_value = round((analog_voltage - 0.5) * 1000, 2)
+    psi_value = round((analog_voltage - 0.5) * 1000, 0)
 
     window['pressurePROG'].update_bar(psi_value, 3300)
     if (analog_voltage < 0.5 or analog_voltage > 3.3):
