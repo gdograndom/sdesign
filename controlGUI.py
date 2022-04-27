@@ -33,8 +33,8 @@ col_1 = [  [sg.Text('Drive Mode', size=(29,1), font='Helvetica 20', justificatio
 col_2 = [  [sg.Text('', size=(13,1), font='Helvetica 20'), sg.Button('', image_data=red_x_base64, button_color=sg.TRANSPARENT_BUTTON, border_width=0, image_subsample=8, key='Exit')],
 		   [sg.Text('       3000 PSI', size=(13,1), font='Helvetica 13')],
            [sg.Text('', size=(2,1), font='Helvetica 20'), sg.ProgressBar(1, orientation='w', size=(32, 50), key='pressurePROG')],
-           [sg.Text('', size=(30,1), font='Helvetica 20', key='pressureTXT')]
-           [sg.Text('test', size=(30,1), font='Helvetica 20', key='voltageTXT')] ]
+           [sg.Text('', size=(30,1), font='Helvetica 20', key='pressureTXT')],
+           [sg.Text('', size=(30,1), font='Helvetica 20', key='voltageTXT')] ]
 
 layout = [  [sg.Frame(layout=col_1, title='', border_width=0), sg.Frame(layout=col_2, title='', border_width=0)] ]
 
